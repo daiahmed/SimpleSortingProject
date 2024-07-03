@@ -1,5 +1,4 @@
-import java.util.ArrayList;
 
 public interface Sortable {
-    void sort(ArrayList list);
+    void sort(int [] array);
 }

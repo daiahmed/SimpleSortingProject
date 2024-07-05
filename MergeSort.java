@@ -8,7 +8,7 @@
  */
 public class MergeSort implements Sortable{
     /**
-     * Sorts an array of integers in ascending order using the Merge Sort algorithm.
+     * Sorts an array of integers in descending order using the Merge Sort algorithm.
      * Merge Sort is a divide-and-conquer sorting algorithm with a time complexity of
      *
      * @param array the array to be sorted
@@ -37,7 +37,7 @@ public class MergeSort implements Sortable{
     }
     /**
      * Merges two sorted arrays `left` and `right` into a single sorted array `result`.
-     * This function assumes that both `left` and `right` are already sorted in ascending order.
+     * This function assumes that both `left` and `right` are already sorted in descending order.
      *
      * @param left the first sorted array
      * @param right the second sorted array
@@ -50,10 +50,10 @@ public class MergeSort implements Sortable{
         int k = 0 ;
         // Merge elements while there are elements remaining in both left and right arrays
         while (i < left.length && j < right.length ){
-            if (left[i] <= right[j])
-                result[k++] = left[i++] ; // Add the smaller element from left to result and increment both indexes
+            if (left[i] > right[j])
+                result[k++] = left[i++] ; // Add the bigger element from left to result and increment both indexes
                 else
-                    result[k++] = right[j++] ; // Add the smaller element from right to result and increment both indexes
+                    result[k++] = right[j++] ; // Add the bigger element from right to result and increment both indexes
             }
         // Copy remaining elements from left array (if any)
         while (i < left.length){

@@ -13,7 +13,7 @@ public class MergeSort implements Sortable{
      *
      * @param array the array to be sorted
      */
-    public void sort(int[] array){
+    public void sort(int[] array , int low , int high){
         if (array.length < 2) return;  // Base case: Array with less than 2 elements is already single element
 
         int middle = array.length/2 ;  // Divide the array into two halves
@@ -29,8 +29,8 @@ public class MergeSort implements Sortable{
             right[i-middle] = array[i] ;   // Copy elements to right sub-arrays
         }
         // Sort the left and right sub-arrays recursively
-        sort(left);
-        sort(right);
+        sort(left , 0 , left.length-1);
+        sort(right , 0 , right.length-1);
         // Merge the sorted sub-arrays back into the original array
         merge(left,right,array);
 
